@@ -1,5 +1,5 @@
-﻿<div ng-controller="projectCtrl as ctrl">
-   <h2>Yellow Team</h2> 
+﻿<div ng-controller="projectCtrl as ctrl" ng-cloak>
+   <h2>Team Profit</h2> 
 
     <table class="table">
         <tr>
@@ -14,13 +14,20 @@
             <td>{{ sprint.Revenue }}</td>
             <td>{{ sprint.Profit | number:2  }}%</td>
         </tr>
-        <tr>
+        <tr ng-hide="ctrl.newSprint">
             <td></td>
             <th>{{ ctrl.project.TotalCost }}</th>
             <th>{{ ctrl.project.TotalRevenue }}</th>
             <td></td>
         </tr>
+        <tr ng-show="ctrl.newSprint">
+            <td>generated</td>
+            <td><input type="number" ng-model="ctrl.newSprint.Cost"  /></td>
+            <td><input type="number" ng-model="ctrl.newSprint.Revenue" /></td>
+            <td><button ng-click="ctrl.addSprint()">Add</button></td>
+        </tr>
     </table>
+    <button ng-click="ctrl.addRow()" ng-hide="ctrl.newSprint">Add Sprint</button>
 </div>
 
 
