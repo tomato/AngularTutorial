@@ -117,6 +117,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\libs\angular-mocks.js" />
     <Content Include="Scripts\libs\angular.js" />
     <Content Include="Scripts\libs\angular.min.js" />
@@ -126,6 +127,7 @@
     <Content Include="Scripts\libs\jquery-1.10.2.js" />
     <Content Include="Scripts\libs\jquery-1.10.2.min.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

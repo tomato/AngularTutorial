@@ -1,7 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<div ng-controller="projectCtrl as ctrl">
+   <h2>Yellow Team</h2> 
 
-<h2>Index</h2>
+    <table class="table">
+        <tr>
+            <th>Sprint</th>
+            <th>Cost</th>
+            <th>Revenue</th>
+            <th>Profit</th>
+        </tr>
+        <tr ng-repeat="sprint in ctrl.project.Sprints">
+            <td>{{ sprint.Id }}</td>
+            <td>{{ sprint.Cost }}</td>
+            <td>{{ sprint.Revenue }}</td>
+            <td>{{ sprint.Profit | number:2  }}%</td>
+        </tr>
+        <tr>
+            <td></td>
+            <th>{{ ctrl.project.TotalCost }}</th>
+            <th>{{ ctrl.project.TotalRevenue }}</th>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
 
