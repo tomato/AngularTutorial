@@ -1,33 +1,34 @@
 ﻿<div ng-controller="projectCtrl as ctrl" ng-cloak>
    <h2>Team Profit</h2> 
-
-    <table class="table">
-        <tr>
-            <th>Sprint</th>
-            <th>Cost</th>
-            <th>Revenue</th>
-            <th>Profit</th>
-        </tr>
-        <tr ng-repeat="sprint in ctrl.project.Sprints">
-            <td>{{ sprint.Id }}</td>
-            <td>{{ sprint.Cost }}</td>
-            <td>{{ sprint.Revenue }}</td>
-            <td>{{ sprint.Profit | number:2  }}%</td>
-        </tr>
-        <tr ng-hide="ctrl.newSprint">
-            <td></td>
-            <th>{{ ctrl.project.TotalCost }}</th>
-            <th>{{ ctrl.project.TotalRevenue }}</th>
-            <td></td>
-        </tr>
-        <tr ng-show="ctrl.newSprint">
-            <td>generated</td>
-            <td><input type="number" ng-model="ctrl.newSprint.Cost"  /></td>
-            <td><input type="number" ng-model="ctrl.newSprint.Revenue" /></td>
-            <td><button ng-click="ctrl.addSprint()">Add</button></td>
-        </tr>
-    </table>
-    <button ng-click="ctrl.addRow()" ng-hide="ctrl.newSprint">Add Sprint</button>
+    <form name="sprintForm" novalidate>
+        <table class="table">
+            <tr>
+                <th>Sprint</th>
+                <th>Cost</th>
+                <th>Revenue</th>
+                <th>Profit</th>
+            </tr>
+            <tr ng-repeat="sprint in ctrl.project.Sprints">
+                <td>{{ sprint.Id }}</td>
+                <td>{{ sprint.Cost }}</td>
+                <td>{{ sprint.Revenue }}</td>
+                <td>{{ sprint.Profit | number:2  }}%</td>
+            </tr>
+            <tr ng-hide="ctrl.newSprint">
+                <td></td>
+                <th>{{ ctrl.project.TotalCost }}</th>
+                <th>{{ ctrl.project.TotalRevenue }}</th>
+                <td></td>
+            </tr>
+            <tr ng-show="ctrl.newSprint">
+                <td>generated</td>
+                <td><input type="number" ng-model="ctrl.newSprint.Cost" class="form-control" required/></td>
+                <td><input type="number" ng-model="ctrl.newSprint.Revenue" class="form-control" required /></td>
+                <td><button ng-click="ctrl.addSprint(sprintForm)">Add</button></td>
+            </tr>
+        </table>
+        <button ng-click="ctrl.addRow()" ng-hide="ctrl.newSprint">Add Sprint</button>
+    </form>
 </div>
 
 
