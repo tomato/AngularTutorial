@@ -1,7 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<div ng-controller="projectCtrl as ctrl">
+   {{ ctrl.msg }}
+    <p>
+        <input type="text" ng-model="ctrl.msg" />
+    </p>
+</div>
 
-<h2>Index</h2>
 
